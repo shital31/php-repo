@@ -27,13 +27,18 @@
     <!--  -->
 
     <?php 
-    $isMale=true;
-    $isTall=false;
-    if($isMale || $isTall){
+    $isMale=false;
+    $isTall=true;
+    if($isMale && $isTall){
         echo "you are  tall male";
     }
-    else
-    {
+    elseif($isMale && !$isTall){
+            echo "you are short male";
+        }
+        elseif(!$isMale && $isTall){
+            echo "you are not male but tall";
+        }
+        else{
             echo "you are not male";
         }
      
