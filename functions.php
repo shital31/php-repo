@@ -29,10 +29,10 @@
     <?php 
     $isMale=false;
     $isTall=true;
-    if($isMale && $isTall){
+         if($isMale && $isTall){
         echo "you are  tall male";
-    }
-    elseif($isMale && !$isTall){
+         }
+        elseif($isMale && !$isTall){
             echo "you are short male";
         }
         elseif(!$isMale && $isTall){
@@ -41,9 +41,28 @@
         else{
             echo "you are not male";
         }
-     
     
-    
+    ?>
+    <br> 
+
+    <!-- function to get max number -->
+
+    <?php 
+    function getMax($num1,$num2,$num3){
+        if($num1>=$num2 && $num1>=$num3){
+            return $num1;
+        }
+        elseif($num2>=$num1 && $num2>=$num3){
+            return $num2;
+        }
+        else {
+            return $num3;
+        }
+
+    }
+
+    echo getMax(2000 ,50,100);
+
     ?>
 </body>
 </html>
