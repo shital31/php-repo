@@ -28,12 +28,12 @@
     <!-- value witin and maximum range -->
 
     <?php
-/* variable to check */
+        /* variable to check */
         $int = 122;
 
-/* min value */
+        /* min value */
         $min = 1;
-/* max value */
+        /* max value */
         $max = 200;
 
         if (filter_var($int, FILTER_VALIDATE_INT, array("options" => array("min_range"=>$min, "max_range"=>$max))) === false) {
@@ -41,7 +41,7 @@
         } else {
         echo("Variable value is within the legal range");
         }
-?>  
+    ?>  
    
 
 </body>

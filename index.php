@@ -2,7 +2,8 @@
 <html>  
 <body>
 
-<form action="welcome_get.php" method="get">
+<form action="welcome_get.php" method="post">
+Id: <input type="text" name="id">
 Name: <input type="text" name="name"><br>
 Address: <input type="text" name="address"><br>
 Phone Number: <input type="number" name="phone number"><br>
