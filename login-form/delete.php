@@ -7,44 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-
-
-<form action="delete" method="post">
-<input type="number" value="id">
-<input type="button" value="Delete">
-
-</form>
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "forms";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-// $Id = $_POST["id"];
-// $Name = $_POST["name"];
-// $Address = $_POST ["address"];
-// $PhoneNumber = $_POST["phone_number"];
-// $Email = $_POST["email"];
-// $State = $_POST["state"];
-
- $sql = "DELETE FROM user WHERE id= $Id" ;
-
-
-if ($conn->query($sql) === TRUE) {
-    echo "Record deleted successfully";
-} else {
-    echo "Error deleting record: " . $conn->error;
-}
-
-$conn->close();
-?>
     
+<?php 
+$mysqli = new mysqli('localhost','root','','forms') or die (mysqli_error($mysqli));
+
+ if(isset($_GET['delete'])){
+     $id= $_GET['delete'];
+     $mysqli->query("DELETE FROM user WHERE id=$id")
+      or die($mysqli->error);
+ }
+    echo ' Data deleted Successfully';
+    header("refresh:2 ; url = dashboard.php");
+
+?>
+
 </body>
 </html>
-

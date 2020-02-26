@@ -10,16 +10,18 @@
  
 <form action="register.php" method="post">
 
-     Name: <input type="text" name="name"><br><br>
-     Address: <input type="text" name="address"><br><br>
-     Phone Number: <input type="text" name="phone_number"><br><br>
-     E-mail: <input type="text" name="email"><br><br>
-     Password  : <input type="text" name="password"><br><br>
+     Name: <input type="text" name="name" placeholder="name"><br><br>
+     Address: <input type="text" name="address" placeholder="address"><br><br>
+     Phone Number: <input type="text" name="phone_number" placeholder="phone number"><br><br>
+     E-mail: <input type="text" name="email" placeholder="email"><br><br>
+     Password  : <input type="text" placeholder="password" placeholder="password"><br><br>
      <input type="submit" value="Submit"><br>
                     
-</form>
+
+<body>
 
 <?php 
+    
         $con = mysqli_connect('localhost','root','');
         if(!$con){
         echo 'Not Connected to Server';
@@ -37,21 +39,14 @@
 
 
         $sql = "INSERT INTO user (name,address,phone_number,email,password) 
-        VALUES ('$Name ','$Address','$PhoneNumber','$Email','password' )";n 
+        VALUES ('$Name ','$Address','$PhoneNumber','$Email','password' )"; 
 
         if(!mysqli_query($con,$sql)){
             echo "Not Inserted";
         } else {
             echo "Data inserted successfully";
-        } 
-
-       //header("refresh:2 ; url = index.html");
-
+        }   
+            
     ?> 
-
- 
-
-<body>
-    
 </body>
 </html>
